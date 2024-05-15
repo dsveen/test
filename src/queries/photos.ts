@@ -64,7 +64,7 @@ const queryFn: QueryFunction<UsePhotosData, QueryKey> = async ({
     if (result.success) {
       throw new Error(result.data.error.message);
     }
-    throw new Error("Unknown error: Failed to deserialize error response");
+    throw new Error("Unknown errors: Failed to deserialize error response");
   }
 
   const result = UsePhotosSuccessSchema.safeParse(await res.json());
